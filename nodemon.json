@@ -1,0 +1,8 @@
+{
+  "watch": ["server"],
+  "ext": "ts",
+  "exec": "npm start",
+  "ignore": [
+      "src", "**/*.spec.ts", "**/*.test.ts", ".git", "node_modules"
+  ]
+}
