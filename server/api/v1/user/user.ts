@@ -5,7 +5,7 @@ const router = express.Router();
 
 const getAllUsers = async (req: express.Request, res: express.Response) => {
   try {
-    const users: Array<User> = await db.models.User.findAll();
+    const users: User[]= await db.models.User.findAll();
     res.status(200).send(users);
   } catch (e) {
     res.status(500).send(e);
@@ -49,7 +49,7 @@ const getEventsByUser = async (req: express.Request, res: express.Response) => {
     if (!id) {
       res.status(401).send('User id is required');
     }
-    const events: Array<Event> = await db.models.Event.findAll({
+    const events: Event[] = await db.models.Event.findAll({
       where: {
         user_id: id,
       },
